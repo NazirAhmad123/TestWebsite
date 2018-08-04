@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.MoviePage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "MasterLayout.cshtml";
+}
+@Umbraco.Field("movieTitle")
+
+<br />
+<br />
+@Umbraco.Field("movieDescription")
+<br />
+<br />
+<br />
+<br />
+<br />
+@{
+    var image = Umbraco.TypedMedia(@Umbraco.Field("movieMainImage").ToString());
+    <img src="@image.Url" style="max-width:250px">
+}
+
+<br />
